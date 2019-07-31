@@ -4,10 +4,11 @@ from django.shortcuts import render
 
 from django.shortcuts import render
 
+
 def hello(request):
-    context = {}
-    context['hello'] = 'helloword'
+    context = {'hello': 'helloWorld', 'hello2': 'hello2'}
     return render(request, 'hello.html', context)
 
+
 def base(request):
-    return render(request,'base.html')
+    return render(request, 'base.html')

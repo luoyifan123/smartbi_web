@@ -21,5 +21,6 @@ from lyf_app import views
 
 urlpatterns = [
      path('admin/', admin.site.urls),
-     url(r'^', include('lyf_app.urls'))
+     url(r'^', include('lyf_app.urls')),
+     url(r'^report/', include('report_app.urls'))
 ]

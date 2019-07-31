@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'lyf_app'
+    'lyf_app',
+    'report_app'
 ]
 
 MIDDLEWARE = [
