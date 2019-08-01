@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>tables</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-table.css' %}">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-table.js' %}"></script>
+    <script src="{% static 'js/bootstrap-table-zh-CN.js' %}"></script>
+
+</head>
+<body>
+{#<div class="table-responsive" style="padding: 20px;">#}
+{#    <table class="table text-nowrap" id="table"></table>#}
+{#</div>#}
+<div class="box box-success">
+    <div class="box-body" >
+        <!-- 关键在这个参数class="text-nowrap" ，不要让内容自动换行 加上即可-->
+        <table id="table" class="table table-bordered" data-toggle="table" ></table>
+    </div>
+</div>
+<style>
+    #table tr:nth-child(even) {
+        background: #fafafa;
+    }
+
+    #table th {
+        background: #efefef;
+    }
+</style>
+<script>
+
+
+    const json2 = [{"id": "1", "name": "11", "price": "111"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
+        "id": "2",
+        "name": "22",
+        "price": "222"
+    }]
+    $('#table').bootstrapTable({
+        {#toolbar: "#toolbar",#}
+        height: 600,
+        data: json2,
+        pagination: false,
+        striped: true,
+        columns: [{
+            field: 'id',
+            title: 'Item ID'
+        }, {
+            field: 'name',
+            title: 'Item Name'
+        }, {
+            field: 'price',
+            title: 'Item Price'
+        }]
+    })
+    $('#table').bootstrapTable('hideLoading')
+</script>
+
+</body>
+</html>
