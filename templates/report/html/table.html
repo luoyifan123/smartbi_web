@@ -7,138 +7,66 @@
     <title>tables</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-table.css' %}">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/my.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/bootstrap-table.js' %}"></script>
     <script src="{% static 'js/bootstrap-table-zh-CN.js' %}"></script>
+    <script src="{% static 'js/bootstrap-table-export.js' %}"></script>
 
 </head>
 <body>
-{#<div class="table-responsive" style="padding: 20px;">#}
-{#    <table class="table text-nowrap" id="table"></table>#}
-{#</div>#}
-<div class="box box-success">
-    <div class="box-body" >
+<div class="box box-success" style="padding: 20px">
+    <div class="box-body">
         <!-- 关键在这个参数class="text-nowrap" ，不要让内容自动换行 加上即可-->
-        <table id="table" class="table table-bordered" data-toggle="table" ></table>
+        <table id="table" class="table  table-responsive" data-toggle="table"></table>
     </div>
 </div>
-<style>
-    #table tr:nth-child(even) {
-        background: #fafafa;
-    }
-
-    #table th {
-        background: #efefef;
-    }
-</style>
 <script>
+    debugger
+    {#const json3 = {{ jsondata|safe }}#}
 
-
-    const json2 = [{"id": "1", "name": "11", "price": "111"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }, {"id": "2", "name": "22", "price": "222"}, {"id": "2", "name": "22", "price": "222"}, {
-        "id": "2",
-        "name": "22",
-        "price": "222"
-    }]
     $('#table').bootstrapTable({
         {#toolbar: "#toolbar",#}
-        height: 600,
-        data: json2,
-        pagination: false,
+        height: $(window).height() - 50,
+        url: 'http://192.168.110.204/report/json',
+        method: 'get',
+        sidePagination: "server",
+        {#search: true,#}
+        pageSize: 25,
+        pageList: [25, 50, 100],
+        pagination: true,
         striped: true,
+        {#showColumns: true,//是否显示 内容列下拉框#}
+        clickToSelect: true,//点击选中checkbox
+        singleSelect: true,//启用单行选中
+        showExport: true,                     //是否显示导出
+        exportDataType: "basic",              //basic', 'all', 'selected'
+        queryParams: function (params) {
+                            //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+                            var query_params = {
+                                rows: params.limit,                         //页面大小
+                                page: (params.offset / params.limit) + 1,   //页码
+                                sort: params.sort,      //排序列名
+                                sortOrder: params.order, //排位命令（desc，asc）
+                            };
+                            return query_params;
+                        },
         columns: [{
-            field: 'id',
-            title: 'Item ID'
+            field: 'shopcode',
+            title: 'shopcode'
         }, {
-            field: 'name',
-            title: 'Item Name'
+            field: 'shopname',
+            title: 'shopname'
         }, {
-            field: 'price',
-            title: 'Item Price'
+            field: 'shopid',
+            title: 'shopid'
+        }, {
+            field: 'address',
+            title: 'address'
+        }, {
+            field: 'branch',
+            title: 'branch'
         }]
     })
     $('#table').bootstrapTable('hideLoading')
